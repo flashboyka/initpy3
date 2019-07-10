@@ -7,5 +7,5 @@ from team_app.forms import TeamForm
 @admin.register(TeamModel)
 class TeamAdmin(admin.ModelAdmin):
     form = TeamForm
-    list_display = ['user', 'skills']
+    list_display = ['user', ]
     autocomplete_fields = ('user',)
