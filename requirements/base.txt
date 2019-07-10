@@ -8,7 +8,8 @@ celery==4.3.0  # pyup: < 5.0  # https://github.com/celery/celery
 django-celery-beat==1.5.0  # https://github.com/celery/django-celery-beat
 flower==0.9.3  # https://github.com/mher/flower
 sorl-thumbnail==12.5.0
-django-ckeditor-5.7.1
+django-ckeditor==5.7.1
+django-suit==0.2.26
 
 # Django
 # ------------------------------------------------------------------------------

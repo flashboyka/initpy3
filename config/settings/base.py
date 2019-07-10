@@ -67,6 +67,7 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
+    'suit',
     "django.contrib.admin",
 ]
 THIRD_PARTY_APPS = [
@@ -193,7 +194,7 @@ TEMPLATES = [
     }
 ]
 # http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 # FIXTURES
 # ------------------------------------------------------------------------------
