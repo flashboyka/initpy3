@@ -16,5 +16,5 @@ class TeamModel(models.Model):
         return self.user.__str__()
 
     class Meta:
-        verbose_name = _("team account")
-        verbose_name_plural = _("Team accounts")
+        verbose_name = _("team member")
+        verbose_name_plural = _("Team members")
