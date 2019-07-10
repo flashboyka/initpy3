@@ -77,10 +77,12 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "django_celery_beat",
     "sorl.thumbnail",
+    "ckeditor",
 ]
 
 LOCAL_APPS = [
     "initpy.users.apps.UsersConfig",
+    "team_app",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
