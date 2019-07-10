@@ -1,1 +1,53 @@
 {% extends "base.html" %}
+{% load static i18n thumbnail %}
+
+{% block team %}
+<div class="container">
+  
+  <div class="row">
+
+    <div class="pricing-slide-heading text-center">
+      <h4>{% trans 'Primary assets are people' %}</h4>
+      <h2>{% trans 'Team members' %}</h2>
+      <img class="img=responsive" src="{% static '/images/daag.png' %}" alt="">
+    </div>
+    
+    <div class="the-pricing-slider">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+	  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	</ol>
+	
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+	  <div class="item active">
+	  {% for item in team_members %}
+
+	    <div class="col-md-6 col-xs-12 col-sm-12 wow zoomIn animated">
+
+
+	      
+	      <div class="person">
+		{% thumbnail item.user.photo "100x100" crop="center" as im %}
+		  <img class="img-circle img-responsive" src="{{im.url}}" alt="">
+		{% endthumbnail %}
+		
+		<h6>{{item.user.first_name}} {{item.user.last_name}}</h6>
+		<h5>{{ item.position }}</h5>
+		<p>{{ item.skills|safe }}</p>
+	      </div>
+	      
+	    </div>
+	  {% endfor %}
+	  </div>
+
+	  
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
