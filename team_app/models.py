@@ -19,3 +19,17 @@ class TeamModel(models.Model):
     class Meta:
         verbose_name = _("team member")
         verbose_name_plural = _("Team members")
+
+
+class ContactModel(models.Model):
+    phone = models.CharField(max_length=11, verbose_name=_("phone"))
+    fax = models.CharField(max_length=11, verbose_name=_("fax"))
+    address = models.TextField(verbose_name=_("address"))
+    email = models.EmailField(verbose_name=_("E-mail"))
+
+    def __str__(self):
+        return "{0} {1} {2}".format(self.phone, self.fax, self.email)
+
+    class Meta:
+        verbose_name = _("contact")
+        verbose_name_plural = _("contacts")
