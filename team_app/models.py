@@ -23,7 +23,7 @@ class TeamModel(models.Model):
 
 class ContactModel(models.Model):
     phone = models.CharField(max_length=11, verbose_name=_("phone"))
-    fax = models.CharField(max_length=11, verbose_name=_("fax"))
+    fax = models.CharField(max_length=11, blank=True, verbose_name=_("fax"))
     address = models.TextField(verbose_name=_("address"))
     email = models.EmailField(verbose_name=_("E-mail"))
 
