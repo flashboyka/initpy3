@@ -392,12 +392,19 @@ SUIT_CONFIG = {
     # 'MENU_EXCLUDE': ('auth.group',),
     'MENU': (
         'sites',
-        {'label': _('Accounts'),
+        {'label': _('Team'),
          'icon': 'icon-user',
          'models': (
              'team_app.teammodel',
+             'team_app.contactmodel',
+         )},
+        {'label': _('Accounts'),
+         'icon': 'icon-user',
+         'models': (
              'users.user',
-             'auth.group'
+             'auth.group',
+             'account.emailaddress',
+             'socialaccount.socialaccount',
          )}
         # {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
         # {'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')},
