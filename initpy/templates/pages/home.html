@@ -1,9 +1,28 @@
 {% extends "base.html" %}
 {% load static i18n thumbnail %}
 
-{% block team %}
+{% block service %}
 <div class="container">
-  
+  <div class="row">
+    <h4>{% trans 'Services' %}</h4>
+    <h2>{% trans 'List of services provided' %}</h2>
+    <img class="img-responsive" src="{% static '/images/daag.png' %}" alt="">
+
+    {% for item in services %}
+    <div class="col-md-3 wow zoomIn animated">
+      <i class="{{ item.icon }}"></i>
+      <h3>{{ item.title }}</h3>
+      {{ item.desc|safe }}
+    </div>
+    {% endfor %}
+    
+  </div>
+</div>
+{% endblock service%}
+
+
+{% block team %}
+<div class="container">  
   <div class="row">
 
     <div class="pricing-slide-heading text-center">

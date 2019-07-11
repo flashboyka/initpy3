@@ -397,6 +397,7 @@ SUIT_CONFIG = {
          'models': (
              'team_app.teammodel',
              'team_app.contactmodel',
+             'team_app.servicemodel',
          )},
         {'label': _('Accounts'),
          'icon': 'icon-user',

@@ -1,6 +1,6 @@
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from team_app.models import (TeamModel, ContactModel)
+from team_app.models import (TeamModel, ContactModel, ServiceModel)
 # Register your models here.
 
 
@@ -17,6 +17,7 @@ class TeamAdmin(admin.ModelAdmin):
         }),
     )
 
+
 @admin.register(ContactModel)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['phone', 'fax', 'address', 'email']
@@ -28,3 +29,8 @@ class ContactAdmin(admin.ModelAdmin):
             'fields': ('address',)
         })
     )
+
+
+@admin.register(ServiceModel)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ['title', 'desc']

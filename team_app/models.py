@@ -33,3 +33,16 @@ class ContactModel(models.Model):
     class Meta:
         verbose_name = _("contact")
         verbose_name_plural = _("contacts")
+
+
+class ServiceModel(models.Model):
+    icon = models.CharField(max_length=50, verbose_name=_("icon style"))
+    title = models.CharField(max_length=250, verbose_name=_("type of service"))
+    desc = RichTextField(verbose_name=_("description"))
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = _("service")
+        verbose_name_plural = _("service list")
