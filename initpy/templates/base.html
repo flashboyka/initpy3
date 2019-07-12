@@ -1,268 +1,144 @@
 {% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>{% block title %}init.py{% endblock %}</title>
-
-  <link rel="stylesheet" href="{% static '/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/animate.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/style.css' %}">
-  <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
-  <link rel="stylesheet" href="{% static '/css/project.css' %}">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
-  <script src="{% static '/js/modernizr.js' %}"></script>
-  <!--[if lt IE 9]>
-      <script src="{% static 'js/html5shiv.js' %}"></script>
-      <script src="{% static 'js/respond.min.js' %}"></script>
-      <![endif]-->
-</head>
-<body>
-  <!-- ====================================================header section -->
-  <header class="top-header">
-    <div class="container">
-      <div class="row">
-	<!-- nav starts here -->
-	<div class="col-md-12">
-
-	  {% block top_menu %}
-	  {% include 'top_menu.html' %}
-	  {% endblock top_menu %}
-	  
-	</div>
-      </div>
-    </div>
-  </header><!-- end of header section -->
-  
-  <!-- banner section starts here -->
-  <section class="banner" id="home">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}init.py{% endblock %}</title>
     
-    {% block banner %}
-    <div class="container">
-      <div class="row">
-	<div class="col-xs-6 wow fadeInLeft animated">
-	  <h3>
-	    text
-	  </h3>
-          <div class="area">
-          init.py
+    <link rel="stylesheet" href="{% static '/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static '/css/project.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+    <script src="{% static '/js/modernizr.js' %}"></script>
+    <!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+  </head>
+  <body>
+    <!-- ====================================================header section -->
+    <header class="top-header">
+      <div class="container">
+	<div class="row">
+	  <!-- nav starts here -->
+	  <div class="col-md-12">
+	    
+	    {% block top_menu %}
+	    {% include 'top_menu.html' %}
+	    {% endblock top_menu %}
+	    
 	  </div>
-	  <p>Текст3</p>
-	  <button class="download-btn">download now</button>
-	  <button class="features-btn">view features</button>
 	</div>
-	<div class="col-xs-6 banner-img wow fadeInRight animated">
-	  <img class="img-responsive" src="{% static '/images/it.png' %}" alt="">
+      </div>
+    </header><!-- end of header section -->
+    
+    <!-- banner section starts here -->
+    <section class="banner" id="home">
+      
+      {% block banner %}
+      <div class="container">
+	<div class="row">
+	  <div class="col-xs-6 wow fadeInLeft animated">
+	    <h3>
+	      text
+	    </h3>
+            <div class="area">
+              init.py
+	    </div>
+	    <p>Текст3</p>
+	    <button class="download-btn">download now</button>
+	    <button class="features-btn">view features</button>
+	  </div>
+	  <div class="col-xs-6 banner-img wow fadeInRight animated">
+	    <img class="img-responsive" src="{% static '/images/it.png' %}" alt="">
+	  </div>
+	</div>
+      </div>
+      {% endblock banner %}
+      
+    </section><!-- end of banner section -->
+    
+    <!-- service section -->
+    <section class="features text-center" id="service">
+      
+      {% block service %}
+      
+      {% endblock service %}
+      
+    </section><!-- end of service section -->
+    <hr>
+    <!-- details section -->
+    <section class="details" id="about">
+      
+      {% block about %}
+      
+      {% endblock about %}
+      
+    </section><!-- end of details section -->
+    
+    <!-- pricing-slide section starts here -->
+    <section class="pricing-slide" id="team">
+      {% block team %}  
+      
+      {% endblock team %}
+    </section><!-- end of pricing-slide section -->
+    
+    <!-- contact section -->
+    <section class="contact text-center" id="contact">
+      
+      {% block contact %}
+      
+      {% endblock contact %}
+      
+    </section><!-- end of contact section -->
+    
+    <!-- google map api -->
+    <div class="map">
+      <div class="container-fluid">
+	<div class="row">
+	  <div id="map"></div> <!-- api map -->
 	</div>
       </div>
     </div>
-    {% endblock banner %}
-
-  </section><!-- end of banner section -->
-  
-  <!-- service section -->
-  <section class="features text-center" id="service">
-   
-    {% block service %}
-
-    {% endblock service %}
- 
-  </section><!-- end of service section -->
-  <hr>
-  <!-- details section -->
-  <section class="details" id="about">
-    <div class="container">
-      <div class="row">
-	<div class="col-md-5 col-xs-6 col-sm-6 wow slideInUp animated">
-	  <img class="img-responsive details-phone" src="{% static '/images/verticle-phone.png' %}" alt="">
-	</div>
-	<div class="col-md-6 col-md-offset-1 col-xs-6 col-sm-6 wow slideInUp animated">
-	  <h4>dip into the details</h4>
-	  <h2>Beautiful on every device</h2>
-	  <img class="img-responsive" src="{% static '/images/daag.png' %}" alt="">
-	  <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
-	  <ul>
-	    <li><i class="fa fa-trophy"></i>Awesome design</li>
-	    <li><i class="fa fa-mobile"></i>Fully responsive</li>
-	    <li><i class="fa fa-bolt"></i> Retina ready</li>
-	    <li><i class="fa fa-tachometer"></i>Tons of features and easy to use</li>
-	  </ul>
+    <!-- footer starts here -->
+    <footer class="footer text-center">
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-12">
+	    <div class="icons">
+	      <a href=""><i class="fa fa-behance"></i></a>
+	      <a href=""><i class="fa fa-dribbble"></i></a>
+	      <a href=""><i class="fa fa-twitter"></i></a>
+	      <a href=""><i class="fa fa-facebook"></i></a>
+	      <a href=""><i class="fa fa-linkedin"></i></a>
+	    </div>
+	    <p>COPYRIGHT &copy; </p>
+	  </div>
 	</div>
       </div>
-    </div>
-  </section><!-- end of details section -->
-  
-  <!-- features details section -->
-	<section class="feature-detail">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-xs-5 wow fadeInLeft animated">
-		<h4>dip into the details</h4>
-		<h2>Super easy to customize</h2>
-		<img src="{% static '/images/daag.png' %}" alt="">
-		<p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-	      </div>
-	      <div class="col-xs-7 horizontal-phone wow fadeInRight animated">
-		<img class="img-responsive" src="{% static '/images/laid-phone2.png' %}" alt="phone">
-	      </div>
-	    </div>
-	  </div>
-	</section><!-- end of features-detail section -->
-	
-	<!-- pricing-slide section starts here -->
-	<section class="pricing-slide" id="team">
-	{% block team %}  
-
-	{% endblock team %}
-	</section><!-- end of pricing-slide section -->
-	
-	<!-- find section -->
-	<section class="download">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-8 col-sm-8">
-		<p><span>Like what you see? </span>Get this great theme now!</p>
-	      </div>
-	      <div class="col-md-4 col-sm-4">
-		<button class="features-btn">view features</button>
-		<button class="download-btn">download now</button>
-	      </div>
-	    </div>
-	  </div>
-	</section><!-- end of find section -->
-
-	
-	<!-- price-plan section -->
-	<!--
-	<section class="price-plan text-center" id="pricing">
-	  <div class="container">
-	    <div class="row">
-	      <div class="pricing-heading">
-		<h4>quality has its price</h4>
-		<h2>Pricings &amp; Plans</h2>
-		<img class="img-responsive" src="{% static '/images/daag.png' %}" alt="">
-	      </div>
-	      <div class="pricing-tables">
-		<div class="col-md-3 col-sm-6 wow zoomIn animated">
-		  <div class="single-table free">
-		    <div class="table-heading">
-		      <h3>FREE</h3>
-		    </div>
-		    <div class="table-price">
-		      <h5><span>$</span>0</h5>
-		      <p>/per month</p>
-		    </div>
-		    <div class="table-description">
-		      <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <a href="#">lacinia</a> consectetur.</p>
-		      <button>ORDER NOW</button>
-		    </div>
-		  </div>
-		</div>
-		<div class="col-md-3 col-sm-6 wow zoomIn animated">
-		  <div class="single-table personal">
-		    <div class="table-heading">
-		      <h3>Personal</h3>
-		    </div>
-		    <div class="table-price">
-		      <h5><span>$</span>25</h5>
-		      <p>/per month</p>
-		    </div>
-		    <div class="table-description">
-		      <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <a href="#">lacinia</a> consectetur.</p>
-		      <button>ORDER NOW</button>
-		    </div>
-		  </div>
-		</div>
-		<div class="col-md-3 col-sm-6 wow zoomIn animated">
-		  <div class="single-table business">
-		    <div class="table-heading">
-		      <h3>Business</h3>
-		    </div>
-		    <div class="table-price business-price">
-		      <h5><span>$</span>50</h5>
-		      <p>/per month</p>
-		    </div>
-		    <div class="table-description">
-		      <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <a href="#">lacinia</a> consectetur.</p>
-		      <button>ORDER NOW</button>
-		    </div>
-		  </div>
-		</div>
-		<div class="col-md-3 col-sm-6 wow zoomIn animated">
-		  <div class="single-table ultimate">
-		    <div class="table-heading">
-		      <h3>Ultimate</h3>
-		    </div>
-		    <div class="table-price">
-		      <h5><span>$</span>99</h5>
-		      <p>/per month</p>
-		    </div>
-		    <div class="table-description">
-		      <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <a href="#">lacinia</a> consectetur.</p>
-		      <button>ORDER NOW</button>
-		    </div>
-		  </div>
-		</div>
-	      </div>
-	    </div>
-	  </div>
-	  -->
-	</section><!-- end of price-plan section -->
-	
-	<!-- contact section -->
-	<section class="contact text-center" id="contact">
-	  
-	  {% block contact %}
-
-	  {% endblock contact %}
-
-	</section><!-- end of contact section -->
-
-	<!-- google map api -->
-	<div class="map">
-	  <div class="container-fluid">
-	    <div class="row">
-	      <div id="map"></div> <!-- api map -->
-	    </div>
-	  </div>
-	</div>
-	<!-- footer starts here -->
-	<footer class="footer text-center">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-12">
-		<div class="icons">
-		  <a href=""><i class="fa fa-behance"></i></a>
-		  <a href=""><i class="fa fa-dribbble"></i></a>
-		  <a href=""><i class="fa fa-twitter"></i></a>
-		  <a href=""><i class="fa fa-facebook"></i></a>
-		  <a href=""><i class="fa fa-linkedin"></i></a>
-		</div>
-		<p>COPYRIGHT &copy; </p>
-	      </div>
-	    </div>
-	  </div>
-	</footer>
-	
-	<!-- script tags
-	============================================================= -->
-	<script src="{% static '/js/jquery-2.1.1.js' %}"></script>
-	<script src="{% static '/js/smoothscroll.js' %}"></script>
-	<script src="{% static '/js/bootstrap.min.js' %}"></script>
-	<script src="{% static '/js/custom.js' %}"></script>
-	<script src="{% static '/js/wow.js' %}"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src="{% static '/js/gmaps.js' %}"></script>
-	<script>
-	    var map = new GMaps({
-	      el: '#map',
-	      lat: -12.043333,
-	      lng: -77.028333
-	    });
-	</script>
-</body>
+    </footer>
+    
+    <!-- script tags
+	 ============================================================= -->
+    <script src="{% static '/js/jquery-2.1.1.js' %}"></script>
+    <script src="{% static '/js/smoothscroll.js' %}"></script>
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/custom.js' %}"></script>
+    <script src="{% static '/js/wow.js' %}"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="{% static '/js/gmaps.js' %}"></script>
+    <script>
+      var map = new GMaps({
+      el: '#map',
+      lat: -12.043333,
+      lng: -77.028333
+      });
+    </script>
+  </body>
 </html>

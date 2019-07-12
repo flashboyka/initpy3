@@ -1,4 +1,11 @@
-from team_app.models import TeamModel, ContactModel, ServiceModel
+from team_app.models import (
+    TeamModel,
+    ContactModel,
+    ServiceModel,
+    AboutModel,
+    CertificatesModel,
+)
+
 
 class TeamMiddleware:
     def __init__(self, response):
@@ -11,4 +18,6 @@ class TeamMiddleware:
         response.context_data['team_members'] = TeamModel.objects.all()
         response.context_data['contacts'] = ContactModel.objects.all()
         response.context_data['services'] = ServiceModel.objects.all()
+        response.context_data['abouts'] = AboutModel.objects.all()
+        response.context_data['certs'] = CertificatesModel.objects.all()
         return response
