@@ -11,3 +11,40 @@
   background-color: #f2dede;
   border-color: #eed3d7;
 }
+
+
+
+.area {
+  text-align: center;
+  font-size: 6.5em;
+  color: DeepSkyBlue;
+  letter-spacing: -7px;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: blur 3s ease-out infinite;
+  text-shadow: 0px 0px 5px black, 0px 0px 7px black;
+}
+
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px black,
+      0px 0px 10px black, 
+      0px 0px 25px black,
+      0px 0px 25px black,
+      0px 0px 25px black,
+      0px 0px 25px black,
+      0px 0px 25px black,
+      0px 0px 25px black,
+      0px 0px 50px black,
+      0px 0px 50px black,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
+}
+

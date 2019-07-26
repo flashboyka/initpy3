@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from ckeditor.fields import RichTextField
+from sorl.thumbnail import ImageField
 
 from django.conf import settings
 # Create your models here.
@@ -46,3 +47,24 @@ class ServiceModel(models.Model):
     class Meta:
         verbose_name = _("service")
         verbose_name_plural = _("service list")
+
+
+class AboutModel(models.Model):
+    title = models.CharField(max_length=250, verbose_name=_("title"))
+    body = RichTextField(verbose_name=_('body'))
+
+    class Meta:
+        verbose_name = _("about")
+        verbose_name_plural = _("abouts")
+
+
+class CertificatesModel(models.Model):
+    user = models.ForeignKey(TeamModel, on_delete=models.CASCADE, related_name="cert", verbose_name=_("Team member"))
+    image = ImageField(upload_to="team/certificates/", blank=True, verbose_name=_("Image"))
+
+    def __str__(self):
+        return self.user.__str__()
+
+    class Meta:
+        verbose_name = _("certificate")
+        verbose_name_plural = _("certificate list")

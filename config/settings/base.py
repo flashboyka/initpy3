@@ -141,6 +141,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "team_app.middlewares.TeamMiddleware",
 ]
 
 # STATIC
@@ -398,6 +399,7 @@ SUIT_CONFIG = {
              'team_app.teammodel',
              'team_app.contactmodel',
              'team_app.servicemodel',
+             'team_app.aboutmodel',
          )},
         {'label': _('Accounts'),
          'icon': 'icon-user',
