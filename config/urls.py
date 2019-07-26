@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 # from django.views.generic import TemplateView
 from django.views import defaults as default_views
@@ -17,6 +18,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path('i18n/', include('django.conf.urls.i18n')),
+    path("robots.txt/", TemplateView.as_view(template_name="initpy/robots.txt")),
+    path("sitemap.xml/", TemplateView.as_view(template_name="initpy/sitemap.xml")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
